@@ -137,7 +137,6 @@
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
 }
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
