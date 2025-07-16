@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import { Button } from "~/components/ui/button";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -8,5 +9,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <div>Welcome to Home</div>;
+  return (
+    <div>
+      <h2>Welcome to Home</h2>
+      <h3>Shadcn Setup</h3>
+      <Button variant="default">Click Me</Button>
+    </div>
+  );
 }
