@@ -1,4 +1,3 @@
-// src/routes.ts
 import {
   layout,
   route,
