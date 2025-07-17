@@ -1,21 +1,39 @@
 import { Menu } from "lucide-react";
-import React from "react";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
+import LanguageDropdown from "~/container/header/components/LanguageDropdown";
+import ProfileDropdown from "~/container/header/components/ProfileDropdown";
+import { useSidebar } from "~/context/ SidebarContext";
 
-const Header = () => {
+const Header: React.FC = () => {
+  const { toggle } = useSidebar();
+
   return (
-    <div className="flex items-center justify-between gap-4 px-6 py-3  shadow-md">
-      {/* Left Logo Box  */}
-      <NavLink to={"/"}>
-        <div className="flex items-center gap-4 ">
-          <Menu strokeWidth={2.5} />
-          <h3 className="text-heading2 text-primary">KUROCO AI</h3>
-        </div>
-      </NavLink>
+    <header
+      id="header"
+      className="sticky top-0 z-50 flex items-center justify-between gap-4 px-4 sm:px-6 py-3 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b shadow-sm"
+    >
+      {/* Left section */}
+      <div className="flex items-center gap-4">
+        <button
+          id="menu-button"
+          onClick={toggle}
+          className="p-2 rounded-md hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
+          aria-label="Toggle sidebar"
+        >
+          <Menu size={28} strokeWidth={2.5} />
+        </button>
 
-      {/* Right Profile and Language Box  */}
-      <div></div>
-    </div>
+        <Link to="/" className="flex items-center gap-2 focus:outline-none">
+          <h1 className="text-heading2 text-primary font-bold">KUROCO AI</h1>
+        </Link>
+      </div>
+
+      {/* Right section */}
+      <div className="flex items-center gap-2">
+        <LanguageDropdown />
+        <ProfileDropdown />
+      </div>
+    </header>
   );
 };
 
