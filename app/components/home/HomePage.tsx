@@ -6,9 +6,11 @@ const HomePage = () => {
   return (
     <div className="my-10 lg:px-20 px-4">
       <div>
-        <h2 className="text-center text-5xl mb-4 font-bold">Welcome to Home</h2>
+        <h2 className="text-center text-display2 mb-4 font-bold">
+          Welcome to Home
+        </h2>
 
-        <h2 className="text-center text-4xl">KUROCO AI Button Variants </h2>
+        <h2 className="text-center text-title3">KUROCO AI Button Variants </h2>
         <div className="flex flex-col justify-center w-full  p-8">
           <div className="flex gap-4 my-8">
             <Button>Primary</Button>
