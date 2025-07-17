@@ -1,3 +1,4 @@
+import { House } from "lucide-react";
 import React from "react";
 import { useSidebar } from "~/context/ SidebarContext";
 
@@ -29,12 +30,9 @@ const Sidebar: React.FC = () => {
     `}
       >
         <div className="p-4">
-          <h2 className="text-xl font-bold">Sidebar</h2>
-          <ul className="mt-4 space-y-2">
-            <li>Dashboard</li>
-            <li>Settings</li>
-            <li>Logout</li>
-          </ul>
+          <div className="flex items-center gap-2">
+            <House />
+          </div>
         </div>
       </aside>
     </>
