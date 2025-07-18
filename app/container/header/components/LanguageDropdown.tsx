@@ -1,3 +1,4 @@
+// src/components/LanguageDropdown.tsx
 import { ChevronDown, Globe } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "~/context/LanguageContext";
@@ -37,7 +38,7 @@ const LanguageDropdown: React.FC = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 cursor-pointer px-3 py-2 text-sm rounded-md hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
-        aria-label="Select language"
+        aria-label={t("selectLanguage")}
       >
         <span>{currentLang?.flag}</span>
         <span className="hidden sm:block">{currentLang?.name}</span>
@@ -72,4 +73,5 @@ const LanguageDropdown: React.FC = () => {
     </div>
   );
 };
+
 export default LanguageDropdown;

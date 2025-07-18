@@ -1,99 +1,58 @@
-import React, {
+// src/contexts/LanguageContext.tsx
+import {
   createContext,
   useContext,
-  useState,
   useEffect,
+  useState,
   type ReactNode,
 } from "react";
+import i18n from "~/i18n";
+import { useTranslation } from "react-i18next";
 
-// Types
-export type Language = "en" | "ja";
+type Language = "en" | "ja";
 
-export interface LanguageContextType {
+interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
 }
 
-interface LanguageProviderProps {
-  children: ReactNode;
-}
-
-// Translation data structure
-const translations: Record<Language, Record<string, string>> = {
-  en: {
-    // Navigation
-    home: "Home",
-    teamProject: "Team & Project Management",
-    private: "Private",
-    developmentTeam: "Development Team",
-    salesTeam: "Sales Team",
-    marketingTeam: "Marketing Team",
-    maToolSettings: "MA Tool Settings",
-    hearingSheet: "Hearing Sheet",
-  },
-  ja: {
-    // Navigation
-    home: "ホーム",
-    teamProject: "チーム・プロジェクト管理",
-    private: "プライベート",
-    developmentTeam: "開発チーム",
-    salesTeam: "営業チーム",
-    marketingTeam: "マーケティングチーム",
-    maToolSettings: "MAツール設定",
-    hearingSheet: "ヒアリングシート",
-  },
-};
-
-// Create context
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-// Provider component
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({
-  children,
-}) => {
-  const [language, setLanguage] = useState<Language>("ja");
-  // Load language from localStorage on mount
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguageState] = useState<Language>("ja");
+  const { t } = useTranslation();
+
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("kuroco-language") as Language;
-    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "ja")) {
-      setLanguage(savedLanguage);
+    const storedLang = localStorage.getItem("kuroco-language") as Language;
+    if (storedLang && (storedLang === "en" || storedLang === "ja")) {
+      setLanguageState(storedLang);
+      i18n.changeLanguage(storedLang);
+    } else {
+      // Set default language if no valid stored language
+      i18n.changeLanguage("ja");
     }
   }, []);
 
-  // Save language to localStorage when changed
-  useEffect(() => {
-    localStorage.setItem("kuroco-language", language);
-  }, [language]);
-
-  // Translation function
-  const t = (key: string): string => {
-    return translations[language][key] || key;
-  };
-
-  const value: LanguageContextType = {
-    language,
-    setLanguage,
-    t,
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    i18n.changeLanguage(lang);
+    localStorage.setItem("kuroco-language", lang);
   };
 
   return (
-    <LanguageContext.Provider value={value}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
 };
 
-// Custom hook to use language context
-export const useLanguage = (): LanguageContextType => {
+export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
+    throw new Error("useLanguage must be used within LanguageProvider");
   }
   return context;
 };
-
-// Export translations for external use if needed
-export { translations };

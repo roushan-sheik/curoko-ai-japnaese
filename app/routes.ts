@@ -12,5 +12,6 @@ export default [
   layout("components/layout/MainLayout.tsx", [
     index("routes/_layout/index.tsx"),
     route("projects", "routes/_layout/Projects.tsx"),
+    route("blogs", "routes/_layout/Blogs.tsx"),
   ]),
 ] satisfies RouteConfig;
