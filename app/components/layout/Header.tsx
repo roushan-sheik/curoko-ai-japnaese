@@ -17,7 +17,7 @@ const Header: React.FC = () => {
         <button
           id="menu-button"
           onClick={toggle}
-          className="p-2 rounded-md hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
+          className="p-2 rounded-md hover:bg-secondary cursor-pointer transition-colors focus:outline-none "
           aria-label="Toggle sidebar"
         >
           <Menu size={28} strokeWidth={2.5} />

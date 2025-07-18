@@ -50,7 +50,7 @@ const LanguageDropdown: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-popover border rounded-md shadow-lg z-50 animate-in fade-in-0 zoom-in-95">
+        <div className="absolute right-0 mt-2 w-40 bg-popover border rounded-md shadow-lg z-[9999] animate-in fade-in-0 zoom-in-95">
           {languages.map((lang) => (
             <button
               key={lang.code}
