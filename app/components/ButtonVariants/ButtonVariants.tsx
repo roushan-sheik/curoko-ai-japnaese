@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "~/components/ui/button";
 import { PlusCircle, ClipboardList, Save, Undo2, Redo2 } from "lucide-react";
 
-const HomePage = () => {
+const ButtonVariants = () => {
   return (
     <div className="my-10 lg:px-20 px-4">
       <div>
@@ -61,4 +61,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default ButtonVariants;

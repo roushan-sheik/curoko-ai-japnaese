@@ -1,9 +1,10 @@
 import React from "react";
-import HomePage from "~/components/home/HomePage";
+import Home from "~/container/home/Home";
+
 export default function () {
   return (
     <div>
-      <HomePage />
+      <Home />
     </div>
   );
 }
