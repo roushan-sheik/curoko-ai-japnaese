@@ -5,6 +5,7 @@ import { Button } from "~/components/ui/button";
 import SectionContainer from "~/components/shared/SectionContainer";
 import { recentItems } from "./constants/recentItems";
 import type { TItem } from "./types/types";
+import { NavLink } from "react-router";
 
 const Home = () => {
   const { t } = useTranslation("home");
@@ -28,18 +29,28 @@ const Home = () => {
         <div className="mb-8">
           <h2 className="text-heading2 mb-4">{t("quickActions")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Button variant="default" className="justify-start h-14 px-6">
-              <div className="h-6 w-6 rounded-full flex justify-center items-center bg-white">
-                <Plus className="w-5 h-5 text-primary" />
-              </div>
-              {t("createNewProject")}
-            </Button>
-            <Button variant="success" className="justify-start h-14 px-6">
-              <div>
-                <FileText size={28} />
-              </div>
-              {t("interviewSheetCreation")}
-            </Button>
+            <NavLink to={"/create-new-project"} className={"w-full"}>
+              <Button
+                variant="default"
+                className="justify-start w-full h-14 px-6"
+              >
+                <div className="h-6 w-6 rounded-full flex justify-center items-center bg-white">
+                  <Plus className="w-5 h-5 text-primary" />
+                </div>
+                {t("createNewProject")}
+              </Button>
+            </NavLink>
+            <NavLink to={"/create-interview-sheet"}>
+              <Button
+                variant="success"
+                className="justify-start w-full h-14 px-6"
+              >
+                <div>
+                  <FileText size={28} />
+                </div>
+                {t("interviewSheetCreation")}
+              </Button>
+            </NavLink>
           </div>
         </div>
 

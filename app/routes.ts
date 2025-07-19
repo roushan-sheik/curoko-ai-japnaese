@@ -13,5 +13,10 @@ export default [
     index("routes/_layout/index.tsx"),
     route("projects", "routes/_layout/Projects.tsx"),
     route("blogs", "routes/_layout/Blogs.tsx"),
+    route("create-new-project", "routes/_layout/CreateNewProjectHome.tsx"),
+    route(
+      "create-interview-sheet",
+      "routes/_layout/CreateInterviewSheetHome.tsx"
+    ),
   ]),
 ] satisfies RouteConfig;

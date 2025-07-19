@@ -8,5 +8,16 @@
   "crmImplementationProject": "CRM導入プロジェクト",
   "maToolSelection": "MAツールの選定",
   "requirementsSpecification": "要件定義書",
-  "interviewSheet": "インタビューシート"
+  "interviewSheet": "インタビューシート",
+
+  "selectCreationMethod": "作成方法を選択してください",
+  "aiSupportedAutoGeneration": "AIサポートによる自動生成",
+  "aiSupportedAutoGenerationDesc": "質問に答えるだけで要件定義書が自動生成されます",
+  "templateBasedCreation": "テンプレートから作成",
+  "templateBasedCreationDesc": "業界別のテンプレートを使用して効率的に作成",
+  "freeForm": "フリー形式",
+  "freeFormDesc": "白紙から自由に要件定義書を作成",
+  "import": "インポート",
+  "importDesc": "既存のファイルや調査データから自動生成",
+  "back": "戻る"
 }

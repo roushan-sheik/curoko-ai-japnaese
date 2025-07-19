@@ -8,5 +8,16 @@
   "crmImplementationProject": "CRM implementation project",
   "maToolSelection": "MA tool selection",
   "requirementsSpecification": "Requirements Specification",
-  "interviewSheet": "Interview Sheet"
+  "interviewSheet": "Interview Sheet",
+
+  "selectCreationMethod": "Please select creation method",
+  "aiSupportedAutoGeneration": "AI-Supported Auto Generation",
+  "aiSupportedAutoGenerationDesc": "Automatically generate requirements documents by simply answering questions",
+  "templateBasedCreation": "Template-Based Creation",
+  "templateBasedCreationDesc": "Create efficiently using industry-specific templates",
+  "freeForm": "Free Form",
+  "freeFormDesc": "Create requirements documents freely from scratch",
+  "import": "Import",
+  "importDesc": "Generate automatically from existing files or survey data",
+  "back": "Back"
 }
