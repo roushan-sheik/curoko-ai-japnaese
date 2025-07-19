@@ -5,6 +5,7 @@ const Blogs = () => {
 
   return (
     <section>
+      <h1>Blogs</h1>
       <h1>{t("qualityTitle")}</h1>
       <p>{t("qualityContent")}</p>
 
