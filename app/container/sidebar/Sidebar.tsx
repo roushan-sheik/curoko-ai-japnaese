@@ -1,6 +1,7 @@
-import { House, Plus } from "lucide-react";
+import { House, Plus, X } from "lucide-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router";
 import { useSidebar } from "~/context/ SidebarContext";
 
 const Sidebar: React.FC = () => {
@@ -32,11 +33,24 @@ const Sidebar: React.FC = () => {
     `}
       >
         <div className="p-4">
-          {/* home header */}
-          <div className="flex items-center pl-4 gap-2">
-            <House />
-            <h3 className="text-body1 text-nowrap">{t("home")}</h3>
+          {/* home house with cross button */}
+          <div className="flex items-center justify-between pl-4">
+            <NavLink to={"/"}>
+              <div className="flex items-center gap-2">
+                <House />
+                <h3 className="text-body1 text-nowrap">{t("home")}</h3>
+              </div>
+            </NavLink>
+            {/* Cross button to close sidebar */}
+            <button
+              onClick={close}
+              className="p-1 rounded-md hover:bg-gray-100 cursor-pointer  transition-colors focus:outline-none"
+              aria-label="Close sidebar"
+            >
+              <X size={22} className="text-gray-500 hover:text-primary " />
+            </button>
           </div>
+
           {/* title  */}
           <div>
             <div className="max-h-20 overflow-hidden ">
