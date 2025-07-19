@@ -1,5 +1,9 @@
 # Kuroco Ai
 
+## 🚀 Live Preview
+
+🔗 **Live Link:** [https://kuroco-ai.vercel.app](https://kuroco-ai.vercel.app)
+
 ## Features
 
 - 🚀 Server-side rendering
