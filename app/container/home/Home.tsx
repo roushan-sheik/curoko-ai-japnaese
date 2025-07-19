@@ -44,10 +44,9 @@ const Home = () => {
               <Button
                 variant="success"
                 className="justify-start w-full h-14 px-6"
+                size={"sm"}
               >
-                <div>
-                  <FileText size={28} />
-                </div>
+                <FileText size={5} />
                 {t("interviewSheetCreation")}
               </Button>
             </NavLink>

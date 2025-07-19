@@ -68,11 +68,6 @@ const CreateNewProject = () => {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
-            <NavLink to="/">
-              <Button variant="outline" className="p-4">
-                <ArrowLeft className="w-8 h-8 " />
-              </Button>
-            </NavLink>
             <h1 className="text-heading1">{t("createNewProject")}</h1>
           </div>
           <p className="text-body1 text-muted-foreground">

@@ -19,5 +19,12 @@
   "freeFormDesc": "白紙から自由に要件定義書を作成",
   "import": "インポート",
   "importDesc": "既存のファイルや調査データから自動生成",
-  "back": "戻る"
+  "back": "戻る",
+
+  "createNewInterviewSheet": "新規ヒアリングシート作成",
+  "selectInterviewSheetMethod": "ヒアリングシート作成方法を選択してください",
+  "templateFormat": "テンプレート形式",
+  "templateFormatDesc": "事前準備された質問項目で効率的にヒアリング",
+  "freeFormat": "フリー形式",
+  "freeFormatDesc": "白紙から自由にヒアリング内容を記録"
 }

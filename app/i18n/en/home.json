@@ -19,5 +19,12 @@
   "freeFormDesc": "Create requirements documents freely from scratch",
   "import": "Import",
   "importDesc": "Generate automatically from existing files or survey data",
-  "back": "Back"
+  "back": "Back",
+
+  "createNewInterviewSheet": "Create New Interview Sheet",
+  "selectInterviewSheetMethod": "Please select interview sheet creation method",
+  "templateFormat": "Template Format",
+  "templateFormatDesc": "Efficient interview with pre-prepared questions",
+  "freeFormat": "Free Format",
+  "freeFormatDesc": "Record interview content freely from scratch"
 }
