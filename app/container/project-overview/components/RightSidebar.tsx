@@ -8,11 +8,16 @@ import {
   Target,
   Users,
   AlertTriangle,
+  X,
 } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { useTranslation } from "react-i18next";
 
-const RightSidebar = () => {
+interface RightSidebarProps {
+  onClose?: () => void;
+}
+
+const RightSidebar: React.FC<RightSidebarProps> = ({ onClose }) => {
   const { t } = useTranslation("home");
 
   const checklist = [
@@ -23,9 +28,20 @@ const RightSidebar = () => {
   ];
 
   return (
-    <div className="p-6 h-full">
+    <div className="p-6 h-full relative">
+      {/* Close Button - Top Left */}
+      {onClose && (
+        <button
+          onClick={onClose}
+          className="absolute top-6 left-6 p-1.5 rounded-lg hover:bg-gray-100 transition-colors lg:hidden z-10"
+          aria-label="Close sidebar"
+        >
+          <X className="w-4 h-4 text-gray-500" />
+        </button>
+      )}
+
       {/* AI Assistant Header */}
-      <div className="mb-6">
+      <div className="mb-6 mt-8 lg:mt-0">
         <div className="flex items-center gap-2 mb-4">
           <div className="p-2 bg-blue-100 rounded-lg">
             <Bot className="w-5 h-5 text-blue-600" />

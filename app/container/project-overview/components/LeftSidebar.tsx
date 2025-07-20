@@ -10,9 +10,14 @@ import {
   Cog,
   ChevronRight,
   ChevronDown,
+  X,
 } from "lucide-react";
 
-const LeftSidebar = () => {
+interface LeftSidebarProps {
+  onClose?: () => void;
+}
+
+const LeftSidebar: React.FC<LeftSidebarProps> = ({ onClose }) => {
   const { t } = useTranslation("home");
   const [activeItem, setActiveItem] = useState("project-overview");
   const [expandedSections, setExpandedSections] = useState([
@@ -73,8 +78,19 @@ const LeftSidebar = () => {
   ];
 
   return (
-    <div className="p-4">
-      <nav className="space-y-2">
+    <div className="p-4 relative">
+      {/* Close Button - Top Right */}
+      {onClose && (
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-1.5 rounded-lg hover:bg-gray-100 transition-colors lg:hidden z-10"
+          aria-label="Close sidebar"
+        >
+          <X className="w-4 h-4 text-gray-500" />
+        </button>
+      )}
+
+      <nav className="space-y-2 mt-8 lg:mt-0">
         {sidebarItems.map((item) => (
           <div key={item.id}>
             {/* Main Item */}
