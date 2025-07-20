@@ -1,5 +1,11 @@
 {
   "welcome": "ようこそ",
   "language": "言語",
-  "selectLanguage": "言語を選択"
+  "selectLanguage": "言語を選択",
+  "Undo": "元に戻す",
+  "Redo": "やり直し",
+  "Save": "保存",
+  "Preview": "プレビュー",
+  "Export": "エクスポート",
+  "lastUpdated": "最終更新"
 }
