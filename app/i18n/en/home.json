@@ -26,5 +26,63 @@
   "templateFormat": "Template Format",
   "templateFormatDesc": "Efficient interview with pre-prepared questions",
   "freeFormat": "Free Format",
-  "freeFormatDesc": "Record interview content freely from scratch"
+  "freeFormatDesc": "Record interview content freely from scratch",
+
+  "documentsStructure": "Documents Structure",
+  "save": "Save",
+  "projectOverview": "Project Overview",
+  "purposeBackground": "Purpose & Background",
+  "projectScope": "Project Scope",
+  "deliverables": "Deliverables",
+  "requirements": "Requirements",
+  "systemDesign": "System Design",
+  "functionalRequirements": "Functional Requirements",
+  "nonFunctionalRequirements": "Non-functional Requirements",
+
+  "projectPurposeDescription": "This project aims to optimize the customer management process through current manual processes and improve the productivity of the sales team. Currently, customer information is scattered and there are issues with the efficiency of sales activities.",
+
+  "customerInfoManagement": "Customer information management function development",
+  "salesActivityRecording": "Sales activity recording function implementation",
+  "reportingFunctionality": "Reporting function construction",
+  "existingSystemIntegration": "Integration with existing systems",
+
+  "requirementsDefinition": "Requirements definition document",
+  "systemDesignDocument": "System design document",
+  "crmApplication": "CRM application",
+  "userManual": "User manual",
+  "operationGuide": "Operation guide",
+
+  "functionName": "Function Name",
+  "priority": "Priority",
+  "overview": "Overview",
+  "userLogin": "User login",
+  "high": "High",
+  "userAuthenticationFunction": "User authentication function",
+
+  "aiAssistant": "AI Assistant",
+  "projectOverviewAbout": "About the \"Project Overview\", have you considered the following points? The following items are checked:",
+  "stakeholderClarification": "Stakeholder clarification",
+  "successMetricsDefinition": "Success metrics definition",
+  "riskIdentification": "Risk identification",
+  "budgetScheduleOverview": "Budget/Schedule overview",
+  "additionalQuestions": "Do you have any specific questions about these items?",
+
+  "progressChecklist": "Progress Checklist",
+  "quickInsights": "Quick Insights",
+  "projectObjectives": "Project Objectives",
+  "clearlyDefined": "Clearly defined",
+  "stakeholders": "Stakeholders",
+  "identifiedAndMapped": "Identified and mapped",
+  "nextSteps": "Next Steps",
+  "budgetScheduleNeeded": "Budget & schedule needed",
+
+  "askAI": "Ask AI",
+  "tools": "Tools",
+  "messageInputPlaceholder": "Enter message...",
+
+  "requirementAnalysis": "Requirement Analysis",
+  "terminologyChecker": "Terminology Checker",
+  "progressManagement": "Progress Management",
+  "prioritySettings": "Priority Settings",
+  "templateInsertion": "Template Insertion"
 }

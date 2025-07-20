@@ -35,6 +35,7 @@ const CreateNewProject = () => {
       description: t("aiSupportedAutoGenerationDesc"),
       bgColor: "bg-blue-50 hover:bg-blue-100",
       borderColor: "border-blue-200",
+      navigateLink: "#",
     },
     {
       id: "template-based",
@@ -43,6 +44,7 @@ const CreateNewProject = () => {
       description: t("templateBasedCreationDesc"),
       bgColor: "bg-green-50 hover:bg-green-100",
       borderColor: "border-green-200",
+      navigateLink: "#",
     },
     {
       id: "free-form",
@@ -51,6 +53,7 @@ const CreateNewProject = () => {
       description: t("freeFormDesc"),
       bgColor: "bg-purple-50 hover:bg-purple-100",
       borderColor: "border-purple-200",
+      navigateLink: "/project-overview",
     },
     {
       id: "import",
@@ -59,6 +62,7 @@ const CreateNewProject = () => {
       description: t("importDesc"),
       bgColor: "bg-gray-50 hover:bg-gray-100",
       borderColor: "border-gray-200",
+      navigateLink: "#",
     },
   ];
 
@@ -86,17 +90,19 @@ const CreateNewProject = () => {
                 hover:shadow-md hover:scale-[1.02]
               `}
             >
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-3 rounded-full bg-white shadow-sm">
-                  {option.icon}
+              <NavLink to={option.navigateLink}>
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="p-3 rounded-full bg-white shadow-sm">
+                    {option.icon}
+                  </div>
+                  <h3 className="text-heading3 font-semibold text-foreground">
+                    {option.title}
+                  </h3>
+                  <p className="text-body2 text-muted-foreground leading-relaxed">
+                    {option.description}
+                  </p>
                 </div>
-                <h3 className="text-heading3 font-semibold text-foreground">
-                  {option.title}
-                </h3>
-                <p className="text-body2 text-muted-foreground leading-relaxed">
-                  {option.description}
-                </p>
-              </div>
+              </NavLink>
             </div>
           ))}
         </div>

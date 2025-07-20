@@ -26,5 +26,63 @@
   "templateFormat": "テンプレート形式",
   "templateFormatDesc": "事前準備された質問項目で効率的にヒアリング",
   "freeFormat": "フリー形式",
-  "freeFormatDesc": "白紙から自由にヒアリング内容を記録"
+  "freeFormatDesc": "白紙から自由にヒアリング内容を記録",
+
+  "documentsStructure": "文書構造",
+  "save": "保存",
+  "projectOverview": "プロジェクト概要",
+  "purposeBackground": "目的・背景",
+  "projectScope": "プロジェクトスコープ",
+  "deliverables": "成果物・定義",
+  "requirements": "要求仕様",
+  "systemDesign": "システム設計",
+  "functionalRequirements": "機能要件",
+  "nonFunctionalRequirements": "非機能要件",
+
+  "projectPurposeDescription": "このプロジェクトは、現在の手動による顧客管理プロセスを効率化し、営業チームの生産性向上を目的としています。現状では顧客情報が散在しており、営業活動の効率性に課題があります。",
+
+  "customerInfoManagement": "顧客情報管理機能の開発",
+  "salesActivityRecording": "営業活動記録機能の実装",
+  "reportingFunctionality": "レポート機能の構築",
+  "existingSystemIntegration": "既存システムとの連携",
+
+  "requirementsDefinition": "要件定義書",
+  "systemDesignDocument": "システム設計書",
+  "crmApplication": "CRMアプリケーション",
+  "userManual": "ユーザーマニュアル",
+  "operationGuide": "運用保守ガイド",
+
+  "functionName": "機能名",
+  "priority": "優先度",
+  "overview": "概要",
+  "userLogin": "ユーザーログイン",
+  "high": "高",
+  "userAuthenticationFunction": "ユーザー認証機能",
+
+  "aiAssistant": "AI相談",
+  "projectOverviewAbout": "「プロジェクト概要」について記述していますね。以下の点は検討されましたか？",
+  "stakeholderClarification": "ステークホルダーの明確化",
+  "successMetricsDefinition": "成功指標の定義",
+  "riskIdentification": "リスクの特定",
+  "budgetScheduleOverview": "予算・スケジュールの概要",
+  "additionalQuestions": "具体的にこの項目について相談したいことがありますか？",
+
+  "progressChecklist": "進捗チェックリスト",
+  "quickInsights": "クイックインサイト",
+  "projectObjectives": "プロジェクト目標",
+  "clearlyDefined": "明確に定義済み",
+  "stakeholders": "ステークホルダー",
+  "identifiedAndMapped": "特定・マッピング済み",
+  "nextSteps": "次のステップ",
+  "budgetScheduleNeeded": "予算・スケジュール必要",
+
+  "askAI": "AIに質問",
+  "tools": "ツール",
+  "messageInputPlaceholder": "メッセージを入力...",
+
+  "requirementAnalysis": "要件分析",
+  "terminologyChecker": "用語チェッカー",
+  "progressManagement": "進捗管理",
+  "prioritySettings": "優先度設定",
+  "templateInsertion": "テンプレート挿入"
 }

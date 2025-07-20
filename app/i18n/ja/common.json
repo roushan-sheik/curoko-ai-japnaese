@@ -1,5 +1,20 @@
 {
   "welcome": "ようこそ",
   "language": "言語",
-  "selectLanguage": "言語を選択"
+  "selectLanguage": "言語を選択",
+  "Undo": "元に戻す",
+  "Redo": "やり直し",
+  "Save": "保存",
+  "Preview": "プレビュー",
+  "Export": "エクスポート",
+  "lastUpdated": "最終更新",
+
+  "projectOverview": "プロジェクト概要",
+  "purposeBackground": "目的・背景",
+  "projectScope": "プロジェクトスコープ",
+  "deliverables": "成果物・定義",
+  "requirementsSpec": "要求仕様",
+  "functionalReq": "機能要件",
+  "nonFunctionalReq": "非機能要件",
+  "systemDesign": "システム設計"
 }
