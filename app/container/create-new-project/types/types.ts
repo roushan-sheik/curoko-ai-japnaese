@@ -7,6 +7,7 @@ export interface ProjectOption {
   description: string;
   bgColor: string;
   borderColor: string;
+  navigateLink: string;
 }
 
 export type ProjectOptionId =

@@ -3,6 +3,7 @@ import {
   route,
   index,
   type RouteConfig,
+  prefix,
 } from "@react-router/dev/routes";
 
 export default [
@@ -19,5 +20,6 @@ export default [
       "create-interview-sheet",
       "routes/_layout/CreateInterviewSheetHome.tsx"
     ),
+    route("project-overview", "routes/_layout/ProjectOverview.tsx"),
   ]),
 ] satisfies RouteConfig;
