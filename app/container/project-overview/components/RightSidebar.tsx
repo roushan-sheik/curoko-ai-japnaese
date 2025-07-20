@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const RightSidebar = ({ onClose }) => {
+const RightSidebar = ({ onClose }: { onClose: () => void }) => {
   const [activeTab, setActiveTab] = useState("ai");
   const { t } = useTranslation("home");
 
@@ -67,7 +67,7 @@ const RightSidebar = ({ onClose }) => {
   ];
 
   const renderAITab = () => (
-    <div className="p-6 h-full">
+    <div className="p-6  h-full">
       {/* AI Assistant Header */}
       <div className="mb-6">
         <div className="flex items-center gap-2 mb-4">
@@ -244,7 +244,7 @@ const RightSidebar = ({ onClose }) => {
       {onClose && (
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-1.5 rounded-lg hover:bg-gray-100 transition-colors lg:hidden z-20"
+          className="absolute top-6 left-4 p-1.5 rounded-lg hover:bg-gray-100 transition-colors lg:hidden z-20"
           aria-label="Close sidebar"
         >
           <X className="w-4 h-4 text-gray-500" />
@@ -252,7 +252,7 @@ const RightSidebar = ({ onClose }) => {
       )}
 
       {/* Tab Navigation */}
-      <div className="border-b border-gray-200">
+      <div className="border-b border-gray-200 mt-12 lg:mt-0">
         <div className="flex">
           <button
             onClick={() => setActiveTab("ai")}

@@ -7,5 +7,14 @@
   "Save": "保存",
   "Preview": "プレビュー",
   "Export": "エクスポート",
-  "lastUpdated": "最終更新"
+  "lastUpdated": "最終更新",
+
+  "projectOverview": "プロジェクト概要",
+  "purposeBackground": "目的・背景",
+  "projectScope": "プロジェクトスコープ",
+  "deliverables": "成果物・定義",
+  "requirementsSpec": "要求仕様",
+  "functionalReq": "機能要件",
+  "nonFunctionalReq": "非機能要件",
+  "systemDesign": "システム設計"
 }

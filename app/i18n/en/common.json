@@ -7,5 +7,14 @@
   "Save": "Save",
   "Preview": "Preview",
   "Export": "Export",
-  "lastUpdated": "Last updated"
+  "lastUpdated": "Last updated",
+
+  "projectOverview": "Project Overview",
+  "purposeBackground": "Purpose & Background",
+  "projectScope": "Project Scope",
+  "deliverables": "Deliverables & Definition",
+  "requirementsSpec": "Requirements Specification",
+  "functionalReq": "Functional Requirements",
+  "nonFunctionalReq": "Non-Functional Requirements",
+  "systemDesign": "System Design"
 }
