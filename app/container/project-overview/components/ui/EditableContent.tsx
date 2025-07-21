@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import type { EditableContentProps } from "../../types/types";
 import { useProgress } from "~/context/useProgressContext";
 
+// Global Undo Stack
+export const undoStack: { [id: string]: string[] } = {};
+
 const EditableContent: React.FC<EditableContentProps> = ({
   id,
   placeholder,
@@ -10,44 +13,57 @@ const EditableContent: React.FC<EditableContentProps> = ({
   minHeight = "min-h-24",
 }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [content, setContent] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
   const { setProgress } = useProgress();
 
   useEffect(() => {
-    if (contentRef.current) {
-      setContent(contentRef.current.innerHTML);
+    const saved = localStorage.getItem("content-store");
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      const content = parsed[id]?.html;
+      if (content && contentRef.current) {
+        contentRef.current.innerHTML = content;
+      }
     }
-  }, [children]);
+  }, []);
 
-  const handleFocus = () => {
-    setIsEditing(true);
+  const saveContent = (html: string) => {
+    const text = contentRef.current?.innerText || "";
+    const updatedAt = new Date().toISOString();
+
+    const newData = {
+      id,
+      html,
+      text,
+      updatedAt,
+    };
+
+    // Save to localStorage
+    const existing = JSON.parse(localStorage.getItem("content-store") || "{}");
+    const updated = { ...existing, [id]: newData };
+    localStorage.setItem("content-store", JSON.stringify(updated));
+
+    // Save to undoStack
+    if (!undoStack[id]) undoStack[id] = [];
+    undoStack[id].push(html);
+
+    // API call here
+    // sendToBackend(id, newData)
   };
 
-  const handleBlur = () => {
-    setIsEditing(false);
-    if (contentRef.current) {
-      setContent(contentRef.current.innerHTML);
-    }
-  };
-
-  // const handleInput = () => {
-  //   if (contentRef.current) {
-  //     setContent(contentRef.current.innerHTML);
-  //   }
-  // };
   const handleInput = () => {
     if (contentRef.current) {
-      const newContent = contentRef.current.innerText;
-      setContent(contentRef.current.innerHTML);
+      const html = contentRef.current.innerHTML;
+      saveContent(html);
 
-      // Example logic to detect "stakeholder" keyword
+      const text = contentRef.current.innerText;
+
+      // Progress bar example
       if (id === "purpose-content") {
         const complete =
-          newContent.includes("ステークホルダー") ||
-          newContent.includes("stakeholder") ||
-          newContent.length > 30;
-
+          text.includes("ステークホルダー") ||
+          text.includes("stakeholder") ||
+          text.length > 30;
         setProgress((prev) => ({
           ...prev,
           "project-overview": complete ? 100 : 50,
@@ -57,7 +73,7 @@ const EditableContent: React.FC<EditableContentProps> = ({
       if (id === "non-functional-content") {
         setProgress((prev) => ({
           ...prev,
-          "system-design": newContent.length > 20 ? 100 : 0,
+          "system-design": text.length > 20 ? 100 : 0,
         }));
       }
     }
@@ -69,16 +85,15 @@ const EditableContent: React.FC<EditableContentProps> = ({
       className={`block-editor border border-gray-200 rounded p-4 ${minHeight} focus:ring-2 focus:ring-blue-500 focus:outline-none overflow-x-auto ${className}`}
       contentEditable
       suppressContentEditableWarning
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+      onFocus={() => setIsEditing(true)}
+      onBlur={() => setIsEditing(false)}
       onInput={handleInput}
       data-placeholder={placeholder}
-      style={{
-        position: "relative",
-      }}
+      style={{ position: "relative" }}
     >
       {children}
     </div>
   );
 };
+
 export default EditableContent;
