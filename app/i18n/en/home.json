@@ -84,5 +84,26 @@
   "terminologyChecker": "Terminology Checker",
   "progressManagement": "Progress Management",
   "prioritySettings": "Priority Settings",
-  "templateInsertion": "Template Insertion"
+  "templateInsertion": "Template Insertion",
+
+  "interviewItems": "Interview Items",
+  "progress": "Progress",
+  "businessBackground": "Business Background & Issues",
+  "userInfo": "User Information",
+  "featureRequests": "Feature Requests",
+  "technicalConstraints": "Technical Constraints",
+  "requiredItems": "Required Items",
+
+  "aiConsultation": "AI Consultation",
+
+  "currentSection": "Current Section",
+
+  "aiSuggestions": "AI Suggestions",
+
+  "sendButton": "Send",
+  "interviewProgress": "Interview Progress Management",
+  "importanceMatrix": "Importance Matrix",
+  "questionTemplates": "Question Templates",
+  "terminologyDict": "Terminology Dictionary",
+  "voiceMemo": "Voice Memo"
 }

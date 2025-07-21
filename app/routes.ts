@@ -21,5 +21,6 @@ export default [
       "routes/_layout/CreateInterviewSheetHome.tsx"
     ),
     route("project-overview", "routes/_layout/ProjectOverview.tsx"),
+    route("interview-sheet", "routes/_layout/InterviewSheetHome.tsx"),
   ]),
 ] satisfies RouteConfig;
