@@ -12,6 +12,7 @@ import {
   ChevronDown,
   X,
 } from "lucide-react";
+import { useProgress } from "~/context/useProgressContext";
 
 interface LeftSidebarProps {
   onClose?: () => void;
@@ -23,14 +24,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({ onClose }) => {
   const [expandedSections, setExpandedSections] = useState([
     "project-overview",
   ]);
-
-  const toggleSection = (sectionId: string) => {
-    setExpandedSections((prev) =>
-      prev.includes(sectionId)
-        ? prev.filter((id) => id !== sectionId)
-        : [...prev, sectionId]
-    );
-  };
+  const { progress } = useProgress(); // dynamic progress from context
 
   const sidebarItems = [
     {
@@ -39,7 +33,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({ onClose }) => {
       icon: FileText,
       color: "text-green-600",
       bgColor: "bg-green-50",
-      progress: 100,
+      progress: progress["project-overview"] || 0,
       children: [
         {
           id: "purpose-background",
@@ -56,7 +50,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({ onClose }) => {
       icon: SettingsIcon,
       color: "text-orange-500",
       bgColor: "bg-orange-50",
-      progress: 75,
+      progress: progress["requirements"] || 0,
       children: [
         { id: "functional-req", title: t("functionalRequirements"), icon: Cog },
         {
@@ -72,14 +66,22 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({ onClose }) => {
       icon: Layers,
       color: "text-blue-600",
       bgColor: "bg-blue-50",
-      progress: 0,
+      progress: progress["system-design"] || 0,
       children: [],
     },
   ];
 
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections((prev) =>
+      prev.includes(sectionId)
+        ? prev.filter((id) => id !== sectionId)
+        : [...prev, sectionId]
+    );
+  };
+
   return (
     <div className="p-4 relative">
-      {/* Close Button - Top Right */}
+      {/* Close Button */}
       {onClose && (
         <button
           onClick={onClose}
@@ -95,14 +97,11 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({ onClose }) => {
           <div key={item.id}>
             {/* Main Item */}
             <div
-              className={`
-                flex items-center justify-between p-3 rounded-lg cursor-pointer transition-all
-                ${
-                  activeItem === item.id
-                    ? `${item.bgColor} border-l-4 border-green-500`
-                    : "hover:bg-gray-50"
-                }
-              `}
+              className={`flex items-center justify-between p-3 rounded-lg cursor-pointer transition-all ${
+                activeItem === item.id
+                  ? `${item.bgColor} border-l-4 border-green-500`
+                  : "hover:bg-gray-50"
+              }`}
               onClick={() => {
                 setActiveItem(item.id);
                 toggleSection(item.id);
@@ -115,8 +114,8 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({ onClose }) => {
                 </span>
               </div>
 
-              {/* Progress Bar */}
               <div className="flex items-center gap-2">
+                {/* Progress Bar */}
                 <div className="w-12 h-1 bg-gray-200 rounded-full">
                   <div
                     className={`h-full rounded-full transition-all ${
@@ -145,14 +144,11 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({ onClose }) => {
                 {item.children.map((child) => (
                   <div
                     key={child.id}
-                    className={`
-                      flex items-center gap-3 p-2 rounded-md cursor-pointer transition-all
-                      ${
-                        activeItem === child.id
-                          ? "bg-gray-100"
-                          : "hover:bg-gray-50"
-                      }
-                    `}
+                    className={`flex items-center gap-3 p-2 rounded-md cursor-pointer transition-all ${
+                      activeItem === child.id
+                        ? "bg-gray-100"
+                        : "hover:bg-gray-50"
+                    }`}
                     onClick={() => setActiveItem(child.id)}
                   >
                     <child.icon className="w-4 h-4 text-gray-500" />

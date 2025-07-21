@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import type { EditableContentProps } from "../../types/types";
+import { useProgress } from "~/context/useProgressContext";
 
 const EditableContent: React.FC<EditableContentProps> = ({
   id,
@@ -11,6 +12,7 @@ const EditableContent: React.FC<EditableContentProps> = ({
   const [isEditing, setIsEditing] = useState(false);
   const [content, setContent] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
+  const { setProgress } = useProgress();
 
   useEffect(() => {
     if (contentRef.current) {
@@ -29,9 +31,35 @@ const EditableContent: React.FC<EditableContentProps> = ({
     }
   };
 
+  // const handleInput = () => {
+  //   if (contentRef.current) {
+  //     setContent(contentRef.current.innerHTML);
+  //   }
+  // };
   const handleInput = () => {
     if (contentRef.current) {
+      const newContent = contentRef.current.innerText;
       setContent(contentRef.current.innerHTML);
+
+      // Example logic to detect "stakeholder" keyword
+      if (id === "purpose-content") {
+        const complete =
+          newContent.includes("ステークホルダー") ||
+          newContent.includes("stakeholder") ||
+          newContent.length > 30;
+
+        setProgress((prev) => ({
+          ...prev,
+          "project-overview": complete ? 100 : 50,
+        }));
+      }
+
+      if (id === "non-functional-content") {
+        setProgress((prev) => ({
+          ...prev,
+          "system-design": newContent.length > 20 ? 100 : 0,
+        }));
+      }
     }
   };
 
