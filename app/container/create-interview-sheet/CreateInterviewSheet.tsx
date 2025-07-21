@@ -47,44 +47,45 @@ const CreateInterviewSheet = () => {
         </div>
 
         {/* Two Main Options - Matching Screenshot Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {/* Template Option */}
-          <div
-            className="p-8 rounded-lg border-2 border-gray-200 bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all duration-200 hover:shadow-md"
-            onClick={() => handleOptionClick("template-based")}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-white shadow-sm">
-                <FileText className="w-12 h-12 text-blue-600" />
+        <NavLink to={"/interview-sheet"}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {/* Template Option */}
+            <div
+              className="p-8 rounded-lg border-2 border-gray-200 bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all duration-200 hover:shadow-md"
+              onClick={() => handleOptionClick("template-based")}
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-4 rounded-full bg-white shadow-sm">
+                  <FileText className="w-12 h-12 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {t("templateFormat")}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {t("templateFormatDesc")}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">
-                {t("templateFormat")}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t("templateFormatDesc")}
-              </p>
+            </div>
+
+            {/* Free Form Option */}
+            <div
+              className="p-8 rounded-lg border-2 border-gray-200 bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all duration-200 hover:shadow-md"
+              onClick={() => handleOptionClick("free-form")}
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-4 rounded-full bg-white shadow-sm">
+                  <Edit3 className="w-12 h-12 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {t("freeFormat")}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {t("freeFormatDesc")}
+                </p>
+              </div>
             </div>
           </div>
-
-          {/* Free Form Option */}
-          <div
-            className="p-8 rounded-lg border-2 border-gray-200 bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all duration-200 hover:shadow-md"
-            onClick={() => handleOptionClick("free-form")}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-white shadow-sm">
-                <Edit3 className="w-12 h-12 text-green-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900">
-                {t("freeFormat")}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t("freeFormatDesc")}
-              </p>
-            </div>
-          </div>
-        </div>
-
+        </NavLink>
         {/* Back Button */}
         <div className="flex justify-center">
           <NavLink to="/">

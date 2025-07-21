@@ -1,12 +1,15 @@
 import React from "react";
 import { SidebarProvider } from "~/context/ SidebarContext";
 import { LanguageProvider } from "~/context/LanguageContext";
+import { ProgressProvider } from "~/context/useProgressContext";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <LanguageProvider>
-        <SidebarProvider>{children}</SidebarProvider>
+        <ProgressProvider>
+          <SidebarProvider>{children}</SidebarProvider>
+        </ProgressProvider>
       </LanguageProvider>
     </>
   );

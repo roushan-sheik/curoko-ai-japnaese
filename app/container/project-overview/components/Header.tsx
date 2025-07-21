@@ -12,6 +12,8 @@ import {
   MoreHorizontal,
 } from "lucide-react";
 import { Button } from "~/components/ui/button";
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 interface HeaderProps {
   leftSidebarOpen: boolean;
@@ -29,9 +31,25 @@ const Header: React.FC<HeaderProps> = ({
   const { t, i18n } = useTranslation("common");
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
+  const handleSave = () => {
+    const savedData = localStorage.getItem("content-store");
+    if (!savedData) return;
+
+    const parsed = JSON.parse(savedData);
+    toast.success("Content saved successfully!");
+
+    // Example: POST to backend
+    // await fetch("/api/save", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(parsed),
+    // });
+  };
+
   return (
     <header className="h-14 bg-white border-b border-gray-200 px-2 sm:px-4 flex items-center justify-between">
       {/* Mobile Menu Button & Left Sidebar Toggle */}
+      <ToastContainer position="bottom-center" autoClose={3000} />
       <div className="flex items-center gap-2 lg:hidden">
         <Button
           variant="ghost"
@@ -48,7 +66,10 @@ const Header: React.FC<HeaderProps> = ({
         {/* Always visible primary buttons */}
         <div className="flex items-center gap-1 sm:gap-2">
           {/* Save Button - Always visible */}
-          <Button className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-blue-600 hover:bg-blue-700 text-white">
+          <Button
+            onClick={handleSave}
+            className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-blue-600 hover:bg-blue-700 text-white"
+          >
             <Save className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="hidden sm:inline">{t("Save")}</span>
           </Button>

@@ -84,5 +84,26 @@
   "terminologyChecker": "用語チェッカー",
   "progressManagement": "進捗管理",
   "prioritySettings": "優先度設定",
-  "templateInsertion": "テンプレート挿入"
+  "templateInsertion": "テンプレート挿入",
+
+  "interviewItems": "ヒアリング項目",
+  "progress": "進捗",
+  "businessBackground": "業務背景・課題",
+  "userInfo": "利用者情報",
+  "featureRequests": "機能要望",
+  "technicalConstraints": "技術的制約",
+  "requiredItems": "必須項目",
+
+  "aiConsultation": "AI相談",
+
+  "currentSection": "現在のセクション",
+
+  "aiSuggestions": "AIからの提案",
+
+  "sendButton": "送信",
+  "interviewProgress": "ヒアリング進捗管理",
+  "importanceMatrix": "重要度マトリックス",
+  "questionTemplates": "質問テンプレート",
+  "terminologyDict": "用語辞書",
+  "voiceMemo": "録音メモ"
 }

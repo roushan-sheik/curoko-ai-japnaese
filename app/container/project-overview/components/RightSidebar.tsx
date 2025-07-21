@@ -15,16 +15,34 @@ import {
   Star,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useProgress } from "~/context/useProgressContext";
 
 const RightSidebar = ({ onClose }: { onClose: () => void }) => {
   const [activeTab, setActiveTab] = useState("ai");
   const { t } = useTranslation("home");
+  const { progress } = useProgress();
 
   const checklist = [
-    { id: 1, title: t("stakeholderClarification"), completed: true },
-    { id: 2, title: t("successMetricsDefinition"), completed: true },
-    { id: 3, title: t("riskIdentification"), completed: true },
-    { id: 4, title: t("budgetScheduleOverview"), completed: false },
+    {
+      id: 1,
+      title: t("stakeholderClarification"),
+      completed: progress["project-overview"] >= 30,
+    },
+    {
+      id: 2,
+      title: t("successMetricsDefinition"),
+      completed: progress["project-overview"] >= 60,
+    },
+    {
+      id: 3,
+      title: t("riskIdentification"),
+      completed: progress["requirements"] >= 50,
+    },
+    {
+      id: 4,
+      title: t("budgetScheduleOverview"),
+      completed: progress["system-design"] >= 50,
+    },
   ];
 
   const tools = [
