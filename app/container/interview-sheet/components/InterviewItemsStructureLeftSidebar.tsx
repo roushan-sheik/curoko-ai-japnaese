@@ -95,7 +95,7 @@ const InterviewItemsStructureLeftSidebar: React.FC<
   };
 
   return (
-    <div className="w-64 bg-white border-r border-gray-200 p-4 overflow-y-auto relative">
+    <div className="w-full bg-white border-r border-gray-200 p-4 overflow-y-auto relative">
       {/* Close Button */}
       {onClose && (
         <button

@@ -9,6 +9,10 @@
   "Export": "Export",
   "lastUpdated": "Last updated",
 
+  "createRequirementsDoc": "Create Requirements Doc",
+  "progress": "Progress",
+  "itemsCompleted": "items completed",
+
   "projectOverview": "Project Overview",
   "purposeBackground": "Purpose & Background",
   "projectScope": "Project Scope",
