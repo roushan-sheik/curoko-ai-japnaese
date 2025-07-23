@@ -20,5 +20,6 @@
   "requirementsSpec": "要求仕様",
   "functionalReq": "機能要件",
   "nonFunctionalReq": "非機能要件",
-  "systemDesign": "システム設計"
+  "systemDesign": "システム設計",
+  "customerManagementSystemHearingSheet": "顧客管理システム ヒアリングシート"
 }

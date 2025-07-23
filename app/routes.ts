@@ -3,7 +3,6 @@ import {
   route,
   index,
   type RouteConfig,
-  prefix,
 } from "@react-router/dev/routes";
 
 export default [
@@ -22,5 +21,9 @@ export default [
     ),
     route("project-overview", "routes/_layout/ProjectOverview.tsx"),
     route("interview-sheet", "routes/_layout/InterviewSheetHome.tsx"),
+    route(
+      "customer-management-sheet",
+      "routes/_layout/CustomerManagementSheet.tsx"
+    ),
   ]),
 ] satisfies RouteConfig;

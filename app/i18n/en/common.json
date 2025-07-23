@@ -20,5 +20,6 @@
   "requirementsSpec": "Requirements Specification",
   "functionalReq": "Functional Requirements",
   "nonFunctionalReq": "Non-Functional Requirements",
-  "systemDesign": "System Design"
+  "systemDesign": "System Design",
+  "customerManagementSystemHearingSheet": "Customer Management System Hearing Sheet"
 }
