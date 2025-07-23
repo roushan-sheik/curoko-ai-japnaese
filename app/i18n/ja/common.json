@@ -9,6 +9,10 @@
   "Export": "エクスポート",
   "lastUpdated": "最終更新",
 
+  "createRequirementsDoc": "要件定義書作成",
+  "progress": "進捗",
+  "itemsCompleted": "項目完了",
+
   "projectOverview": "プロジェクト概要",
   "purposeBackground": "目的・背景",
   "projectScope": "プロジェクトスコープ",

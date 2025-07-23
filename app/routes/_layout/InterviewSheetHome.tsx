@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import AiConsultationToolsPanelRightSidebar from "~/container/interview-sheet/components/AiConsolationToolsPanelRightSidebar";
 import InterviewItemsStructureLeftSidebar from "~/container/interview-sheet/components/InterviewItemsStructureLeftSidebar";
 import InterviewSheet from "~/container/interview-sheet/InterviewSheet";
-import Header from "~/container/project-overview/components/Header";
-import LeftSidebar from "~/container/project-overview/components/LeftSidebar";
-import RightSidebar from "~/container/project-overview/components/RightSidebar";
-import ProjectOverviewPage from "~/container/project-overview/ProjectOverviewPage";
+import Header from "~/container/interview-sheet/components/Header"; // Your new Header component
 
 const InterviewSheetHome = () => {
   const [leftSidebarOpen, setLeftSidebarOpen] = useState<boolean>(false);
@@ -17,6 +14,13 @@ const InterviewSheetHome = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  // Sample progress data - you can replace this with actual progress tracking
+  const progressData = {
+    percentage: 52,
+    completed: 4,
+    total: 8,
   };
 
   return (
@@ -41,7 +45,7 @@ const InterviewSheetHome = () => {
         {/* Overlay for mobile */}
         {leftSidebarOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-10 lg:hidden"
+            className="fixed inset-0 bg-black/40 bg-opacity-50 top-[70px] z-10 lg:hidden"
             onClick={() => setLeftSidebarOpen(false)}
           />
         )}
@@ -49,12 +53,13 @@ const InterviewSheetHome = () => {
         {/* Main Content Area */}
         <div className="flex flex-col basis-[100%] lg:basis-[60%] h-full">
           {/* Fixed Header */}
-          <div className="flex-shrink-0 bg-white border-b border-gray-200 sticky top-0 z-10">
+          <div className="flex-shrink-0 bg-white border-b border-gray-200 sticky top-0 z-0">
             <Header
               leftSidebarOpen={leftSidebarOpen}
               setLeftSidebarOpen={setLeftSidebarOpen}
               rightSidebarOpen={rightSidebarOpen}
               setRightSidebarOpen={setRightSidebarOpen}
+              progress={progressData}
             />
           </div>
 
@@ -83,7 +88,7 @@ const InterviewSheetHome = () => {
         {/* Overlay for right sidebar mobile */}
         {rightSidebarOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-10 lg:hidden"
+            className="fixed inset-0 top-[70px] bg-black/40 bg-opacity-50 z-10 lg:hidden"
             onClick={() => setRightSidebarOpen(false)}
           />
         )}

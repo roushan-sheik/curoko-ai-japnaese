@@ -87,7 +87,7 @@ const AiConsultationToolsPanelRightSidebar: React.FC<
   };
 
   const renderAIPanel = () => (
-    <div className="flex-1 flex flex-col">
+    <div className="flex-1 w-full flex flex-col">
       {/* AI Panel Header */}
       <div className="p-4 border-b border-gray-200">
         <h3 className="font-semibold text-gray-800 flex items-center">
